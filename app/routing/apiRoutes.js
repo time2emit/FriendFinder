@@ -1,5 +1,5 @@
 // LOAD DATA
-var friendsData = require("../data");
+var friendsData = require("../data/friends.json");
 
 // ROUTING
 module.exports = function(app) {
@@ -13,5 +13,8 @@ module.exports = function(app) {
   // ---------------------------------------------------------------------------
   app.post("/api/friends", function(req, res) {
       friendsData.push(req.body);
+      res.json(friendsData[0]);
+      formCandidate = req.body;
+      console.log(formCandidate.scores[0]);
   });
 };
